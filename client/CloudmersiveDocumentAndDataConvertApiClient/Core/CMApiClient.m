@@ -89,8 +89,11 @@ static NSString * CM__fileNameForResponse(NSURLResponse *response) {
 #pragma mark - Task Methods
 
 - (NSURLSessionDataTask*) taskWithCompletionBlock: (NSURLRequest *)request completionBlock: (void (^)(id, NSError *))completionBlock {
-
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
+                                            uploadProgress:nil
+                                          downloadProgress:nil
+                                         completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         CMDebugLogResponse(response, responseObject,request,error);
         if(!error) {
             completionBlock(responseObject, nil);
@@ -111,8 +114,11 @@ static NSString * CM__fileNameForResponse(NSURLResponse *response) {
 - (NSURLSessionDataTask*) downloadTaskWithCompletionBlock: (NSURLRequest *)request completionBlock: (void (^)(id, NSError *))completionBlock {
 
     __block NSString * tempFolderPath = [self.configuration.tempFolderPath copy];
-
-    NSURLSessionDataTask* task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    
+    NSURLSessionDataTask* task = [self dataTaskWithRequest:request
+                                            uploadProgress:nil
+                                          downloadProgress:nil
+                                         completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         CMDebugLogResponse(response, responseObject,request,error);
 
         if(error) {
