@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
     s.public_header_files = 'client/CloudmersiveDocumentAndDataConvertApiClient/**/*.h'
 
 
-    s.dependency 'AFNetworking', '~> 3'
+    s.dependency 'AFNetworking'
     s.dependency 'JSONModel', '~> 1.2'
     s.dependency 'ISO8601', '~> 0.6'
 end
