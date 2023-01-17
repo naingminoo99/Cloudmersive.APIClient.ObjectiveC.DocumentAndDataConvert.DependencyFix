@@ -21,9 +21,9 @@ Pod::Spec.new do |s|
 
     s.framework    = 'SystemConfiguration'
 
-    s.homepage     = "https://github.com/Cloudmersive/Cloudmersive.APIClient.ObjectiveC.DocumentAndDataConvert"
+    s.homepage     = "https://github.com/naingminoo99/Objc-Cloudmersive-DependencyFix"
     s.license      = "Proprietary"
-    s.source       = { :git => "https://github.com/naingminoo99/Cloudmersive.APIClient.ObjectiveC.DocumentAndDataConvert.DependencyFix.git", :tag => "#{s.version}" }
+    s.source       = { :git => "https://github.com/naingminoo99/Objc-Cloudmersive-DependencyFix.git", :tag => "#{s.version}" }
     s.author       = { "Cloudmersive" => "support@cloudmersive.com" }
 
     s.source_files = 'client/CloudmersiveDocumentAndDataConvertApiClient/**/*.{m,h}'
